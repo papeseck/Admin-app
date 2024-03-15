@@ -1,40 +1,35 @@
-![work status](https://img.shields.io/badge/work-on%20progress-red.svg)
-![Ngor Seck](https://img.shields.io/badge/Ngor%20Seck-Java-green)
-![PHP](https://img.shields.io/badge/Ngor%20Seck-SpringBoot-yellowgreen)
+# Mini Projet Gestion des Produits, Utilisateurs et Rôles
 
-### REQUIREMENTS
-Prérequis pour démarrer le projet  :
-```
-    Java 1.8 
-    Docker 
-    maven
-```
-### Faites un clone
-:rocket:
+Ce mini-projet est une application de gestion des produits, utilisateurs et rôles, développée avec Spring Boot.
 
-* Go
+## Fonctionnalités
 
-```bash 
-git clone https://github.com/ngorseck/admin-app.git
-# Executer la commande docker-compose 
-docker-compose up -d
-# Démarrer le projet pour les tests 
+- Gestion des produits : Ajouter, Modifier, Supprimer, Afficher les produits.
+- Gestion des utilisateurs : Ajouter, Modifier, Supprimer, Afficher les utilisateurs.
+- Gestion des rôles : Ajouter, Modifier, Supprimer, Afficher les rôles.
 
-```
-#### Objectifs
---- 
-```
-Ce code va vous permettre de comprendre :
--Comment fonctionne une application spring boot ?
--Comment mettre en place une architecture Java spring boot ?
--Comment utiliser docker pour mettre en place un environnement de dev autonome ?
--Comment mettre en place un micro service ?
-```
+## Technologies Utilisées
 
-```
-#### Contact
----
-Email
-```
-:email:  ngorsecka@gmail.com
+- Java
+- Spring Boot
+- Spring Data JPA
+- MySQL (ou toute autre base de données de votre choix)
+- Maven
+
+## Installation et Configuration
+
+1. Cloner ce dépôt sur votre machine locale.
+2. Assurez-vous que vous avez Java JDK, Maven et MySQL installés sur votre machine.
+3. Importez le projet dans votre IDE préféré.
+4. Configurez les détails de la base de données dans le fichier `application.properties`.
+5. Exécutez l'application.
+
+## Utilisation
+
+Une fois l'application en cours d'exécution, vous pouvez interagir avec les différents endpoints à l'aide d'un client HTTP comme Postman. Voici les principaux endpoints :
+
+- `/produits` : Endpoints pour la gestion des produits.
+- `/users` : Endpoints pour la gestion des utilisateurs.
+- `/roles` : Endpoints pour la gestion des rôles.
+
 
