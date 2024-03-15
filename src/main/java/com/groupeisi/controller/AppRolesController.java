@@ -1,43 +1,32 @@
 package com.groupeisi.controller;
 
-import com.groupeisi.dto.AppRoles;
-import com.groupeisi.service.AppRolesService;
-import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
+import com.groupeisi.entities.AppRolesEntity;
+import com.groupeisi.service.AppRolesServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @RequestMapping("/roles")
-@AllArgsConstructor
 public class AppRolesController {
-    private AppRolesService appRolesService;
 
-    @GetMapping
-    public List<AppRoles> getAppRoles() {
-        return appRolesService.getAppRoles();
+    @Autowired
+    private AppRolesServiceImpl rolesService;
+
+    @PostMapping("/add")
+    public AppRolesEntity addRole(@RequestBody AppRolesEntity role) {
+        return rolesService.saveRole(role);
     }
 
     @GetMapping("/{id}")
-    public AppRoles getAppRoles(@PathVariable("id") int id) {
-        return appRolesService.getAppRole(id);
+    public AppRolesEntity getRoleById(@PathVariable int id) {
+        return rolesService.getRoleById(id);
     }
 
-    @PostMapping
-    @ResponseStatus(code = HttpStatus.CREATED)
-    public AppRoles createAppRoles(@Valid @RequestBody AppRoles appRoles) {
-        return appRolesService.createAppRoles(appRoles);
+    @GetMapping("/all")
+    public List<AppRolesEntity> getAllRoles() {
+        return rolesService.getAllRoles();
     }
 
-    @PutMapping("/{id}")
-    public AppRoles updateAppRoles(@PathVariable("id") int id, @Valid @RequestBody AppRoles appRoles) {
-        return appRolesService.updateAppRoles(id, appRoles);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteAppRoles(@PathVariable("id") int id) {
-        appRolesService.deleteAppRoles(id);
-    }
 }
